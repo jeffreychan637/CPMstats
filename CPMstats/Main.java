@@ -37,7 +37,8 @@ public class Main {
                         String timeLog = new SimpleDateFormat("MM.yyyy").format(
                                             Calendar.getInstance().getTime());
                         File outputFile = new
-                                File("CreatedStats/" + timeLog + ".txt");
+                                File("TestOutputs/" + timeLog + ".txt");
+                                    //"CreatedStats/" + timeLog + ".txt");
                         output = new BufferedWriter(new FileWriter(outputFile));
                         //writer.write("Hello world!");
                     } catch (IOException e) {
