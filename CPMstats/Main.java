@@ -1,4 +1,4 @@
-package cpmStats;
+package CPMstats;
 
 import java.io.File;
 import java.io.FileReader;
@@ -32,12 +32,14 @@ public class Main {
             } catch (IOException e) {
                 System.out.print(e.getMessage());
                 System.exit(1);
+                
             }
         }
     }
 
     public static void usage() {
-        System.out.printf("Usage: java Main INPUT_CSV_FILE OUTPUT_TEXT_FILE");
+        System.out.printf("Usage: java CPMstats/Main INPUT_CSV_FILE"
+                            + " OUTPUT_TEXT_FILE\n");
     }
 
 }
