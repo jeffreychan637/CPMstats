@@ -1,6 +1,6 @@
 # Makefile - All credit to UC Berkeley's Paul Hilfinger for this 
 # Makefile's format. I only changed the wording to make it work
-# for my directory
+# for my directory. I also added the “run” command.
 
 # This a Makefile, an input file for the GNU 'make' program.  For you 
 # command-line and Emacs enthusiasts, this makes it possible to build
@@ -33,7 +33,7 @@ TESTS = tests
 CORRECT_TESTS = $(TESTS)/correct/*.inp
 ERROR_TESTS = $(TESTS)/error/*.inp
 
-.PHONY: default style check clean
+.PHONY: default style check clean run
 
 default: CPMstats/Main.class
 
@@ -53,5 +53,8 @@ check: CPMstats/Main.class
 
 clean:
 	$(RM) CPMstats/*.class */*~ *~ OUT
+
+run: default
+	java CPMstats/Main TestInputs/input1.csv 01.2014.txt
 
 

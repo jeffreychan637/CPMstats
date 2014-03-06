@@ -51,6 +51,7 @@ public class Main {
                     }
                 }
                 Gatherer gatherer = new Gatherer(input, output);
+                gatherer.sorter();
                 input.close();
                 output.close();
             } catch (IOException e) {
