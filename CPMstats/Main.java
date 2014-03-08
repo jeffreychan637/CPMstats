@@ -27,6 +27,7 @@ public class Main {
             return;
         } else {
             try {
+                Defaults.buildAllHashes();
                 Scanner input = new Scanner(new File(args[0]));
                 BufferedWriter output = null;
                 if (args.length == 2) {

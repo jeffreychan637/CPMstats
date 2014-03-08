@@ -58,10 +58,9 @@ class Gatherer {
                                 new ArrayList<ArrayList<String>>();
                         }
                     } else {
-                        HashMap<String, ArrayList<ArrayList<String>>>
                         mentors = new
                             HashMap<String, ArrayList<ArrayList<String>>>();
-                        ArrayList<ArrayList<String>> mentorLogs = 
+                        mentorLogs = 
                                 new ArrayList<ArrayList<String>>();
                     }
                     ArrayList<String> currentLog = storeMentorLog(lineParts);
@@ -111,12 +110,10 @@ class Gatherer {
         new HashMap<String, HashMap<String, ArrayList<ArrayList<String>>>>();
     /** A hashmap with keys being mentor names and values being an arraylist
      *  containing mentor logs. */
-    private HashMap<String, ArrayList<ArrayList<String>>> mentors =
-        new HashMap<String, ArrayList<ArrayList<String>>>();
+    private HashMap<String, ArrayList<ArrayList<String>>> mentors;
     /** An arraylist containing arraylists, each of which representing a log
      *  by some mentor. */
-    private ArrayList<ArrayList<String>> mentorLogs =
-        new ArrayList<ArrayList<String>>();
+    private ArrayList<ArrayList<String>> mentorLogs;
 
 
 }
