@@ -80,8 +80,15 @@ class Gatherer {
         }
     }
 
-    /** Returns an arrayList containing the some contents from LINEPARTS.
-     *  Essentially stores all data from a single log into an arraylist. */
+    /** Returns an arrayList containing the same contents from LINEPARTS.
+     *  Essentially stores all data from a single log into an arraylist.
+     *  Index 0: Mentee Name
+     *  Index 1: Total Hours Logged
+     *  Index 2: Forms of Communication Used
+     *  Index 3: Topics Discussed
+     *  Index 4: Modules Used
+     *  Index 5: Module Feedback - If available
+     */
     private static ArrayList<String> storeMentorLog(String[] lineParts) {
         ArrayList<String> currentLog = new ArrayList<String>();
         for (int i = 3; i < lineParts.length; i++) {
@@ -112,7 +119,8 @@ class Gatherer {
      *  containing mentor logs. */
     private HashMap<String, ArrayList<ArrayList<String>>> mentors;
     /** An arraylist containing arraylists, each of which representing a log
-     *  by some mentor. */
+     *  by some mentor. We use multiple arraylists to deal with mentors with
+     *  multiple mentees as well as multiple logs. */
     private ArrayList<ArrayList<String>> mentorLogs;
 
 

@@ -55,6 +55,6 @@ clean:
 	$(RM) CPMstats/*.class */*~ *~ OUT
 
 run: default
-	java CPMstats/Main TestInputs/input1.csv 01.2014.txt
+	java CPMstats/Main TestInputs/input1.csv
 
 

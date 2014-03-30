@@ -1,0 +1,46 @@
+CPM Statistics for 02.2014
+
+Statistics for Amador Valley
+
+1 out of 11 mentors logged hours this month.
+Hours recorded: 0 hours
+Median Hours per Mentor: 0 hours
+Average Hours per Mentor: 0 hours
+Total Mentors using Modules: 0
+Total Percentage of Logging Mentors using Modules: 0%
+Percentage of Logging Mentors using AcademicModule: 0%
+Percentage of Logging Mentors using PersonalModule: 0%
+Percentage of Logging Mentors using ProfessionalModule: 0%
+
+No data from Independence this month.
+
+No data from Lynbrook this month.
+
+No data from Mira Loma this month.
+
+No data from Mission San Jose this month.
+
+Statistics for Palo Alto
+
+1 out of 19 mentors logged hours this month.
+Hours recorded: 15.25 hours
+Median Hours per Mentor: 5 hours
+Average Hours per Mentor: 5.08 hours
+Total Mentors using Modules: 1
+Total Percentage of Logging Mentors using Modules: 100%
+Percentage of Logging Mentors using AcademicModule: 100%
+Percentage of Logging Mentors using PersonalModule: 100%
+Percentage of Logging Mentors using ProfessionalModule: 0%
+
+No data from Poolesville this month.
+
+No data from Rochester Institute of Technology this month.
+
+CPM Overall Statistics
+Total Mentors submitting Data: 2
+Total Hours Recorded: 15.25
+Total Mentors using Modules: 1
+Total Percentage of Logging Mentors using Modules: 50%
+Percentage of Logging Mentors using AcademicModule: 50%
+Percentage of Logging Mentors using PersonalModule: 50%
+Percentage of Logging Mentors using ProfessionalModule: 0%

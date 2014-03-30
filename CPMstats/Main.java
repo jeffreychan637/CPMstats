@@ -46,7 +46,7 @@ public class Main {
                                 File("TestOutputs/" + timeLog + ".txt");
                                     //"CreatedStats/" + timeLog + ".txt");
                         output = new BufferedWriter(new FileWriter(outputFile));
-                        //writer.write("Hello world!");
+                        output.write("CPM Statistics for " + timeLog + "\n\n");
                     } catch (IOException e) {
                         System.err.println(e.getMessage());
                     }
