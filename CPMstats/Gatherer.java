@@ -48,13 +48,15 @@ class Gatherer {
                                     line.split(",(?=([^\"]|\"[^\"]*\")*$)");
         //Assumes that data being passed in is from correct time period
                     if (branches.containsKey(lineParts[1])) {
-                        HashMap<String, ArrayList<ArrayList<String>>>
+                        //HashMap<String, ArrayList<ArrayList<String>>>
                         mentors = branches.get(lineParts[1]);
                         if (mentors.containsKey(lineParts[2])) {
-                            ArrayList<ArrayList<String>> mentorLogs =
+                            //ArrayList<ArrayList<String>> 
+                            mentorLogs =
                                 mentors.get(lineParts[2]);
                         } else {
-                            ArrayList<ArrayList<String>> mentorLogs = 
+                            //ArrayList<ArrayList<String>> 
+                            mentorLogs = 
                                 new ArrayList<ArrayList<String>>();
                         }
                     } else {
@@ -78,6 +80,17 @@ class Gatherer {
             System.err.println(e.getMessage());
             System.exit(1);
         }
+    }
+
+    private void printHashmap(
+        HashMap<String, HashMap<String, ArrayList<ArrayList<String>>>> h) {
+        for (String s: h.keySet()) {
+            System.out.println(s);
+            for (String n : h.get(s).keySet()) {
+                System.out.println("    " + n);
+            }
+        }
+        System.out.println("");
     }
 
     /** Returns an arrayList containing the same contents from LINEPARTS.

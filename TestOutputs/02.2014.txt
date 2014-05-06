@@ -22,11 +22,11 @@ No data from Mission San Jose this month.
 
 Statistics for Palo Alto
 
-1 out of 19 mentors logged hours this month.
-Hours recorded: 15.25 hours
+2 out of 19 mentors logged hours this month.
+Hours recorded: 30.5 hours
 Median Hours per Mentor: 5 hours
 Average Hours per Mentor: 5.08 hours
-Total Mentors using Modules: 1
+Total Mentors using Modules: 2
 Total Percentage of Logging Mentors using Modules: 100%
 Percentage of Logging Mentors using AcademicModule: 100%
 Percentage of Logging Mentors using PersonalModule: 100%
@@ -37,10 +37,10 @@ No data from Poolesville this month.
 No data from Rochester Institute of Technology this month.
 
 CPM Overall Statistics
-Total Mentors submitting Data: 2
-Total Hours Recorded: 15.25
-Total Mentors using Modules: 1
-Total Percentage of Logging Mentors using Modules: 50%
-Percentage of Logging Mentors using AcademicModule: 50%
-Percentage of Logging Mentors using PersonalModule: 50%
+Total Mentors submitting Data: 3
+Total Hours Recorded: 30.5
+Total Mentors using Modules: 2
+Total Percentage of Logging Mentors using Modules: 66.67%
+Percentage of Logging Mentors using AcademicModule: 100%
+Percentage of Logging Mentors using PersonalModule: 100%
 Percentage of Logging Mentors using ProfessionalModule: 0%

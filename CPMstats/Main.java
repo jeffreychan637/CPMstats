@@ -47,6 +47,10 @@ public class Main {
                                     //"CreatedStats/" + timeLog + ".txt");
                         output = new BufferedWriter(new FileWriter(outputFile));
                         output.write("CPM Statistics for " + timeLog + "\n\n");
+                        output.write("Note: All hours and module statistics " +
+                            "do not include mentors who submitted 0 hours. " +
+                            "They are still included as having submitted the " +
+                            "monthly log however.\n\n");
                     } catch (IOException e) {
                         System.err.println(e.getMessage());
                     }
