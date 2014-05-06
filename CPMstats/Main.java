@@ -30,31 +30,31 @@ public class Main {
                 Defaults.buildAllHashes();
                 Scanner input = new Scanner(new File(args[0]));
                 BufferedWriter output = null;
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.MONTH, -1);
+                if (Calendar.MONTH == 1) {
+                        cal.add(Calendar.YEAR, -1);
+               }
+               String timeLog = new SimpleDateFormat("MM.yyyy").format(
+                                    cal.getTime());
                 if (args.length == 2) {
                     output = new BufferedWriter(new
                                             PrintWriter(new File(args[1])));
                 } else {
-                    try {
-                        Calendar cal = Calendar.getInstance();
-                        cal.add(Calendar.MONTH, -1);
-                        if (Calendar.MONTH == 1) {
-                            cal.add(Calendar.YEAR, -1);
-                        }
-                        String timeLog = new SimpleDateFormat("MM.yyyy").format(
-                                            cal.getTime());
+                    try { 
                         File outputFile = new
                                 File("TestOutputs/" + timeLog + ".txt");
                                     //"CreatedStats/" + timeLog + ".txt");
                         output = new BufferedWriter(new FileWriter(outputFile));
-                        output.write("CPM Statistics for " + timeLog + "\n\n");
-                        output.write("Note: All hours and module statistics " +
-                            "do not include mentors who submitted 0 hours. " +
-                            "They are still included as having submitted the " +
-                            "monthly log however.\n\n");
                     } catch (IOException e) {
                         System.err.println(e.getMessage());
                     }
                 }
+                output.write("CPM Statistics for " + timeLog + "\n\n");
+                output.write("Note: All hours and module statistics " +
+                            "do not include mentors who submitted 0 hours. " +
+                            "They are still included as having submitted the " +
+                            "monthly log however.\n\n");
                 Gatherer gatherer = new Gatherer(input, output);
                 gatherer.sorter();
                 input.close();

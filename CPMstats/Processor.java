@@ -118,20 +118,23 @@ class Processor {
                 hoursArray[k] = hoursList.get(k);
             }
             Arrays.sort(hoursArray);
-            double median = 0;
-            if (hoursArray.length % 2 == 0) {
-                median = (double) ((hoursArray[hoursArray.length / 2] +
-                        hoursArray[(hoursArray.length / 2) - 1]) / 2.0d);
-            } else {
-                median = (double) (hoursArray[hoursArray.length / 2]);
+            double median = 0.0;
+            double average = 0.0;
+            if (hoursArray.length != 0) {
+                if (hoursArray.length % 2 == 0) {
+                    median = (double) ((hoursArray[hoursArray.length / 2] +
+                            hoursArray[(hoursArray.length / 2) - 1]) / 2.0d);
+                } else {
+                    median = (double) (hoursArray[hoursArray.length / 2]);
+                }
+                double sum = 0;
+                for (int j = 0; j < hoursArray.length; j++) {
+                    sum += (double) hoursArray[j];
+                }
+                average = (double) (sum / hoursArray.length);
             }
             _output.write("Median Hours per Mentor: " 
                             + roundNumbers(median) + " hours\n");
-            double sum = 0;
-            for (int j = 0; j < hoursArray.length; j++) {
-                sum += (double) hoursArray[j];
-            }
-            double average = (double) (sum / hoursArray.length);
             _output.write("Average Hours per Mentor: " 
                             + roundNumbers(average) + " hours\n");
             return monthZeroMentors;
@@ -197,7 +200,18 @@ class Processor {
             contributions.get(curBranch).add(branchProfessional);
             _output.write("Total Mentors using Modules: "
                 + roundNumbers(branchModules) + "\n");
-            _output.write("Total Percentage of Logging Mentors using Modules: "
+            if (branchModules == 0.0) {
+                _output.write("Total Percentage of Logging Mentors using"
+                + " Modules: 0%\n");
+            _output.write("Percentage of Logging Mentors using the Academic"
+                + " Module: 0%\n");
+            _output.write("Percentage of Logging Mentors using the Personal"
+                + " Module: 0%\n");
+            _output.write("Percentage of Logging Mentors using the Professional"
+                + " Module: 0%\n");
+            } else {
+                _output.write("Total Percentage of Logging Mentors using" 
+                + " Modules: "
                 + roundNumbers(branchModules / branchMentorTotal * 100.0)
                 + "%\n");
             _output.write("Percentage of Logging Mentors using the Academic"
@@ -212,6 +226,7 @@ class Processor {
                 + " Module: "
                 + roundNumbers(branchProfessional / branchMentorTotal * 100.0)
                 + "%\n");
+            }
         } catch (IOException e) {
             System.err.println(e.getMessage());
             System.exit(1);
@@ -238,6 +253,8 @@ class Processor {
      *  branch has been analyzed. */
     void printGeneralStatistics() {
         try {
+            double totalLoggingMentors = 
+                    numberOfSubmissions - totalMonthZeroMentors;
             _output.write("CPM Overall Statistics\n");
             _output.write("Total Mentors submitting Data: "
                 + roundNumbers(numberOfSubmissions) + "\n");
@@ -276,17 +293,17 @@ class Processor {
      *  statistics. */
     void printContributions() {
         try {
-            _output.write("CPM Statistics Distribution\n");
+            _output.write("\nCPM Statistics Distribution\n");
             ArrayList<String> messageStrings = new ArrayList<String>();
             messageStrings.add("Where do our Mentor Submissions come from?\n");
             messageStrings.add("Where do our Hours come from?\n");
             messageStrings.add("Where do our Mentor logging zero hours" 
                                 + " come from?\n");
-            messageStrings.add("Where do our module users come from?\n");
-            messageStrings.add("Where do our Academic module users come from?\n");
-            messageStrings.add("Where do our Personal module users"
+            messageStrings.add("Where do our Module Users come from?\n");
+            messageStrings.add("Where do our Academic Module Users come from?\n");
+            messageStrings.add("Where do our Personal Module Users"
                                 + " come from?\n");
-            messageStrings.add("Where do our Professional module users"
+            messageStrings.add("Where do our Professional Module Users"
                                 + " come from?\n");
             Double[] statisticTotals = {numberOfSubmissions, totalHours,
                     totalMonthZeroMentors, totalModules, totalAcademic,
@@ -356,8 +373,5 @@ class Processor {
     private double totalMonthZeroMentors = 0;
     /** Represents the total amount of logs with zero hours. */
     private double totalZeroLogs = 0;
-    /** Represents the total amount of logs with nonzero hours. */
-    private double totalLoggingMentors = 
-        numberOfSubmissions - totalMonthZeroMentors;
 
 }
