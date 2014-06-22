@@ -133,9 +133,9 @@ class Processor {
                 }
                 average = (double) (sum / hoursArray.length);
             }
-            _output.write("Median Hours per Mentor: " 
+            _output.write("Median Hours per Mentor per Log: " 
                             + roundNumbers(median) + " hours\n");
-            _output.write("Average Hours per Mentor: " 
+            _output.write("Average Hours per Mentor per Log: " 
                             + roundNumbers(average) + " hours\n");
             return monthZeroMentors;
         } catch (IOException e) {
@@ -266,6 +266,8 @@ class Processor {
                         roundNumbers(totalMonthZeroMentors) + "\n");
             _output.write("Total Hours Recorded: " + roundNumbers(totalHours)
                 + "\n");
+            _output.write("Average Hours per Mentor per Month: "
+                + roundNumbers(totalHours / totalLoggingMentors) + "\n");
             _output.write("Total Mentors using Modules: "
                 + roundNumbers(totalModules) + "\n");
             _output.write("Total Percentage of Logging Mentors using Modules: "
